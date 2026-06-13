@@ -120,6 +120,73 @@
   window.addEventListener("hashchange", abrirClaseDesdeHash);
   abrirClaseDesdeHash();
 
+  /* Visor de diapositivas (lightbox) --------------------------------------- */
+  const visor = document.getElementById("visor");
+  if (visor) {
+    const img = document.getElementById("visor-img");
+    const tituloEl = document.getElementById("visor-titulo");
+    const contadorEl = document.getElementById("visor-contador");
+    const descargaEl = document.getElementById("visor-descarga");
+    const escenario = document.getElementById("visor-escenario");
+    const btnPrev = document.getElementById("visor-prev");
+    const btnNext = document.getElementById("visor-next");
+    const btnCerrar = document.getElementById("visor-cerrar");
+    let sesion = null, total = 0, idx = 1;
+
+    const ruta = (n) => "img/diapositivas/sesion-" + sesion + "/" + String(n).padStart(2, "0") + ".jpg";
+    const precargar = (n) => { if (n >= 1 && n <= total) { const im = new Image(); im.src = ruta(n); } };
+
+    const mostrar = (n) => {
+      idx = Math.min(Math.max(n, 1), total);
+      img.src = ruta(idx);
+      img.alt = "Diapositiva " + idx + " de " + total;
+      contadorEl.textContent = idx + " / " + total;
+      btnPrev.disabled = idx === 1;
+      btnNext.disabled = idx === total;
+      precargar(idx + 1);
+      precargar(idx - 1);
+    };
+
+    const abrir = (btn) => {
+      sesion = btn.dataset.sesion;
+      total = parseInt(btn.dataset.total, 10);
+      tituloEl.textContent = btn.dataset.titulo;
+      descargaEl.href = btn.dataset.pptx;
+      visor.hidden = false;
+      document.body.style.overflow = "hidden";
+      mostrar(1);
+    };
+    const cerrar = () => {
+      visor.hidden = true;
+      document.body.style.overflow = "";
+      img.removeAttribute("src");
+    };
+
+    document.querySelectorAll(".preview-diapositiva").forEach((b) =>
+      b.addEventListener("click", () => abrir(b))
+    );
+    btnPrev.addEventListener("click", () => mostrar(idx - 1));
+    btnNext.addEventListener("click", () => mostrar(idx + 1));
+    btnCerrar.addEventListener("click", cerrar);
+    escenario.addEventListener("click", (e) => { if (e.target === escenario) cerrar(); });
+
+    document.addEventListener("keydown", (e) => {
+      if (visor.hidden) return;
+      if (e.key === "ArrowRight") mostrar(idx + 1);
+      else if (e.key === "ArrowLeft") mostrar(idx - 1);
+      else if (e.key === "Escape") cerrar();
+    });
+
+    let x0 = null;
+    visor.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    visor.addEventListener("touchend", (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) mostrar(idx + (dx < 0 ? 1 : -1));
+      x0 = null;
+    });
+  }
+
   /* Año actual en el pie de página ----------------------------------------- */
   const anio = document.getElementById("anio-actual");
   if (anio) anio.textContent = String(new Date().getFullYear());
