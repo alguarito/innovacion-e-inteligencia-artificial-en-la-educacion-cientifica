@@ -512,11 +512,14 @@ a { color: var(--azul-600); }
 
 /* Resultados de aprendizaje ------------------------------------------------ */
 .resultados-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 18px;
 }
 .resultado {
+  flex: 1 1 300px;
+  max-width: 348px;
   background: var(--blanco);
   border: 1px solid var(--gris-100);
   border-radius: var(--radio);
@@ -685,11 +688,14 @@ a { color: var(--azul-600); }
 
 /* Herramientas ----------------------------------------------------------------- */
 .herramientas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
 }
 .herramienta {
+  flex: 1 1 280px;
+  max-width: 348px;
   background: var(--blanco);
   border: 1px solid var(--gris-100);
   border-radius: var(--radio);
