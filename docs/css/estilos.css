@@ -118,15 +118,17 @@ a { color: var(--azul-600); }
   text-decoration: none;
   color: var(--tinta);
 }
-.marca img { height: 38px; width: auto; }
-.marca .marca-texto { line-height: 1.2; white-space: nowrap; }
+.marca img { height: 38px; width: auto; flex-shrink: 0; }
+.marca .marca-texto { line-height: 1.15; }
 .marca .marca-texto strong {
   display: block;
   font-family: var(--fuente-titulos);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--azul-700);
+  max-width: 330px;
 }
-.marca .marca-texto span { font-size: 0.78rem; color: var(--gris-500); }
+.marca .marca-texto span { display: block; font-size: 0.74rem; color: var(--gris-500); margin-top: 2px; }
 
 .navegacion ul {
   display: flex;
@@ -1015,4 +1017,6 @@ details.clase-bloque[open] .clase-chevron { transform: rotate(180deg); }
   .pie-grid { grid-template-columns: 1fr; }
   .chip-flotante.ia-chip { left: -8px; }
   .chip-flotante.quimica { right: -6px; }
+  .marca .marca-texto span { display: none; }
+  .marca .marca-texto strong { max-width: 240px; font-size: 0.8rem; }
 }
