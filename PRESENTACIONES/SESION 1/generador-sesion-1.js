@@ -140,7 +140,7 @@ async function divisor(num, tituloTxt, chips) {
 async function main() {
   P = new pptxgen();
   P.layout = "LAYOUT_16x9";
-  P.author = "PhD. Álvaro Cárdenas Orozco";
+  P.author = "PhD. Alvaro Cardenas Orozco";
   P.title = "Sesión 1 · Fundamentos conceptuales de la innovación y la IA en educación";
 
   /* ---------- 1 · PORTADA ---------- */
@@ -164,7 +164,7 @@ async function main() {
   S.addText("SESIÓN 1", { x: 0.58, y: 2.02, w: 1.2, h: 0.36, fontFace: F.t, fontSize: 11.5, bold: true, color: C.noche, align: "center", valign: "middle", margin: 0 });
   S.addText("Fundamentos conceptuales de la innovación y la IA en educación", { x: 0.55, y: 2.52, w: 6.4, h: 1.55, fontFace: F.t, fontSize: 33, bold: true, color: C.blanco, margin: 0, valign: "top" });
   S.addText("Innovación e Inteligencia Artificial en la Educación Científica — un módulo para docentes de física, química y biología.", { x: 0.58, y: 4.26, w: 5.9, h: 0.6, fontFace: F.c, fontSize: 13.5, color: C.azulClaro, margin: 0 });
-  S.addText("PhD. Álvaro Cárdenas Orozco  ·  Universidad Tecnológica de Pereira", { x: 0.58, y: 4.95, w: 6, h: 0.3, fontFace: F.c, fontSize: 11, color: C.azulSuave, margin: 0 });
+  S.addText("PhD. Alvaro Cardenas Orozco  ·  Universidad Tecnológica de Pereira", { x: 0.58, y: 4.95, w: 6, h: 0.3, fontFace: F.c, fontSize: 11, color: C.azulSuave, margin: 0 });
 
   /* ---------- 2 · LA RUTA DE HOY ---------- */
   nueva(C.fondo);
@@ -824,7 +824,7 @@ async function main() {
   S.addShape(P.shapes.ROUNDED_RECTANGLE, { x: 0.58, y: 3.45, w: 5.9, h: 1.0, rectRadius: 0.08, fill: { color: C.azul }, line: { color: C.azulMedio, width: 1 } });
   S.addText("PRÓXIMA SESIÓN", { x: 0.85, y: 3.6, w: 3, h: 0.26, fontFace: F.t, fontSize: 9.5, bold: true, color: C.dorado, charSpacing: 2, margin: 0 });
   S.addText("Sesión 2 · Herramientas emergentes para la enseñanza de las ciencias", { x: 0.85, y: 3.88, w: 5.4, h: 0.5, fontFace: F.c, fontSize: 12.5, bold: true, color: C.blanco, margin: 0 });
-  S.addText("PhD. Álvaro Cárdenas Orozco  ·  alvaro.cardenas.orozco@gmail.com  ·  Universidad Tecnológica de Pereira", { x: 0.58, y: 4.95, w: 8, h: 0.3, fontFace: F.c, fontSize: 10.5, color: C.azulSuave, margin: 0 });
+  S.addText("PhD. Alvaro Cardenas Orozco  ·  alvaro.cardenas.orozco@gmail.com  ·  Universidad Tecnológica de Pereira", { x: 0.58, y: 4.95, w: 8, h: 0.3, fontFace: F.c, fontSize: 10.5, color: C.azulSuave, margin: 0 });
 
   await P.writeFile({ fileName: "/tmp/pptx-sesion1/sesion-1-fundamentos.pptx" });
   console.log("PPTX generado correctamente");

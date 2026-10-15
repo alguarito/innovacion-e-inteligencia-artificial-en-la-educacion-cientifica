@@ -493,7 +493,7 @@ async function main() {
   }
   S().addText("¡Felicitaciones! Ahora cuentas con las herramientas para liderar el cambio en tu aula de ciencias.",
     { x: 0.58, y: 3.95, w: 6.6, h: 0.7, fontFace: F.c, fontSize: 13, color: C.azulClaro, valign: "top", margin: 0 });
-  S().addText("PhD. Álvaro Cárdenas Orozco  ·  alvaro.cardenas.orozco@gmail.com  ·  Universidad Tecnológica de Pereira",
+  S().addText("PhD. Alvaro Cardenas Orozco  ·  alvaro.cardenas.orozco@gmail.com  ·  Universidad Tecnológica de Pereira",
     { x: 0.58, y: 4.95, w: 8.3, h: 0.3, fontFace: F.c, fontSize: 10.5, color: C.azulSuave, margin: 0 });
 
   await P.writeFile({ fileName: "/tmp/pptx-sesion1/sesion-4-etica.pptx" });

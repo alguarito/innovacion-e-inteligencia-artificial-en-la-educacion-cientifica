@@ -84,7 +84,7 @@ async function iconPng(nombre, color) {
 function createDeck({ sesion, tituloSesion, autor }) {
   const P = new pptxgen();
   P.layout = "LAYOUT_16x9";
-  P.author = autor || "PhD. Álvaro Cárdenas Orozco";
+  P.author = autor || "PhD. Alvaro Cardenas Orozco";
   P.title = tituloSesion;
 
   let S;
@@ -157,7 +157,7 @@ function createDeck({ sesion, tituloSesion, autor }) {
     S.addText("SESIÓN " + sesion, { x: 0.58, y: 2.02, w: 1.2, h: 0.36, fontFace: F.t, fontSize: 11.5, bold: true, color: C.noche, align: "center", valign: "middle", margin: 0 });
     S.addText(tituloSesion.replace(/^Sesión \d+ · /, ""), { x: 0.55, y: 2.52, w: 6.4, h: 1.55, fontFace: F.t, fontSize: 33, bold: true, color: C.blanco, margin: 0, valign: "top" });
     S.addText(subtitulo, { x: 0.58, y: 4.26, w: 5.9, h: 0.6, fontFace: F.c, fontSize: 13.5, color: C.azulClaro, margin: 0 });
-    S.addText("PhD. Álvaro Cárdenas Orozco  ·  Universidad Tecnológica de Pereira", { x: 0.58, y: 4.95, w: 6.4, h: 0.3, fontFace: F.c, fontSize: 11, color: C.azulSuave, margin: 0 });
+    S.addText("PhD. Alvaro Cardenas Orozco  ·  Universidad Tecnológica de Pereira", { x: 0.58, y: 4.95, w: 6.4, h: 0.3, fontFace: F.c, fontSize: 11, color: C.azulSuave, margin: 0 });
   }
 
   /* Divisor de bloque reutilizable */
@@ -192,7 +192,7 @@ function createDeck({ sesion, tituloSesion, autor }) {
       S.addText(proximaLabel, { x: 0.85, y: 3.65, w: 4, h: 0.26, fontFace: F.t, fontSize: 9.5, bold: true, color: C.dorado, charSpacing: 2, margin: 0 });
       S.addText(proxima, { x: 0.85, y: 3.92, w: 5.6, h: 0.5, fontFace: F.c, fontSize: 12.5, bold: true, color: C.blanco, margin: 0 });
     }
-    S.addText(contacto || "PhD. Álvaro Cárdenas Orozco  ·  alvaro.cardenas.orozco@gmail.com  ·  Universidad Tecnológica de Pereira",
+    S.addText(contacto || "PhD. Alvaro Cardenas Orozco  ·  alvaro.cardenas.orozco@gmail.com  ·  Universidad Tecnológica de Pereira",
       { x: 0.58, y: 4.95, w: 8.3, h: 0.3, fontFace: F.c, fontSize: 10.5, color: C.azulSuave, margin: 0 });
   }
 
